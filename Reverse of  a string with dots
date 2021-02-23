@@ -5,26 +5,19 @@ using namespace std;
 int main()
 {
     string s="bac.ant";
-    int count=0,start=0;
+    int count=0;
     
-    for(int i=s.length()-1;i>=0;i++)
+    for(int end=0;end<S.length();end++)
     {
-        while(s[i]!='.')
-        {
-            start=i;
-            i--;
-            count++;
-            if(s[i]=='.')
+            if(S[end]=='.')
             {
-                for(int i=start;i<count;i++)
-                {
-                    cout<<s[i]<<endl;
-                }
+                reverse(S.begin()+count,S.begin()+end);
+                count=end+1;
             }
-        }
-        
     }
-    //cout<<s<<endl;
-        
-    return 0;
+    
+    reverse(S.begin()+count,S.end());
+    reverse(S.begin(),S.end());
+    return S;
+    
 }
